@@ -3,12 +3,14 @@ const path = require("path");
 const dotenv = require("dotenv");
 dotenv.config({ path: "./.env" });
 
+
 const connectDB = require("./config/db");
 const errorHandler = require("./middleware/error");
 
 const app = express();
 app.use(express.json());
 connectDB(); // Connect to databse
+
 
 // API Routes
 app.use("/api/auth", require("./routes/auth"));
