@@ -8,7 +8,7 @@ const connectDB =  () => {
   //   console.log("Failed to connect to MongoDB", error);
   // }
   mongoose
-    .connect("mongodb://127.0.0.1:27017", {
+    .connect("mongodb+srv://sai:sai@cluster0.5orxunn.mongodb.net/?retryWrites=true&w=majority", {
       dbName: "testDb",
     })
     .then(() => console.log("database connected successfully"))
