@@ -274,6 +274,7 @@
 // };
 
 // export default LoginPage;
+
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Form, Button, Spinner, Alert } from "react-bootstrap";
@@ -289,13 +290,15 @@ const LoginPage = () => {
   });
   const [isLoading, setIsLoading] = useState(false);
   const [loginError, setLoginError] = useState(null); // New state to handle login errors
+  const [loginSuccess, setLoginSuccess] = useState(false); // New state to handle login success
 
   const navigate = useNavigate();
   const { setAuth } = AuthState();
 
   const handleCredentials = (e) => {
     setCredentials({ ...credentials, [e.target.name]: e.target.value });
-    setLoginError(null); // Clear any previous login errors when user types
+    setLoginError(null); // Clear any previous login errors when the user types
+    setLoginSuccess(false); // Clear any previous login success messages when the user types
   };
 
   const loginHandler = async (e) => {
@@ -305,7 +308,8 @@ const LoginPage = () => {
     // If any field is missing
     if (!credentials.email || !credentials.password) {
       setIsLoading(false);
-      return Notify("Please Fill all the Fields", "warn");
+      setLoginError("Please Fill all the Fields"); // Set the login error message
+      return;
     }
 
     try {
@@ -325,15 +329,18 @@ const LoginPage = () => {
         localStorage.setItem("auth", JSON.stringify(data)); // Save auth details in local storage
         setAuth(data);
         setIsLoading(false);
-        navigate("/main"); // Go to main page
-        return Notify("You are successfully logged in", "success");
+        setLoginSuccess(true); // Set the login success state to true
+        setTimeout(() => {
+          setLoginSuccess(false); // Clear the login success state after showing the message
+          navigate("/main"); // Navigate to the main page
+        }, 3000); // Show the success message for 3 seconds (adjust as needed)
       } else {
         setIsLoading(false);
         setLoginError(data.error); // Set the login error message
       }
     } catch (error) {
       setIsLoading(false);
-      return Notify("Internal server error", "error");
+      setLoginError("Internal server error");
     }
   };
 
@@ -345,6 +352,13 @@ const LoginPage = () => {
           {loginError}
         </Alert>
       )}
+
+      {loginSuccess && ( // Display the success message if loginSuccess is true
+        <Alert variant="success" className="mb-3">
+          Login successfully
+        </Alert>
+      )}
+
       <Form.Group className="mb-3" controlId="email">
         <Form.Label>Email address</Form.Label>
         <Form.Control
@@ -399,7 +413,7 @@ const LoginPage = () => {
         tabIndex="4"
         className="mb-3"
         onClick={() =>
-           setCredentials({ email: "guest@example.com", password: "12345678" })
+          setCredentials({ email: "guest@example.com", password: "12345678" })
         }
       >
         <FaUserAlt className="me-2" />
@@ -419,4 +433,3 @@ const LoginPage = () => {
 };
 
 export default LoginPage;
-
