@@ -1,4 +1,29 @@
 /* styles.css */
+/* Main.css */
+.chat-input-container {
+  position: relative;
+}
+
+.text-area {
+  padding-right: 35px; /* Adjust this value based on the button width */
+}
+
+.send-button {
+  position: absolute;
+  bottom: 20px;
+  right: 60px;
+  padding: 5px 10px;
+  background-color: rgb(25, 195, 125);
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.send-button:hover {
+  background-color: rgb(18, 144, 90);
+}
+
   .container {
     flex-direction: column;
   }
