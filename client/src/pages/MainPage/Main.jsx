@@ -157,18 +157,18 @@ const Main = () => {
   return (
     <div className="App">
        <aside className="sidemenu">
-        <div className="side-menu-button">
+        <div className="side-menu-button md-4">
           <span>+</span>
           New Chat
         </div>
         <div>
           <Navbar collapseOnSelect expand="md" variant="dark" id="nav">
             <Container>
-              <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+              <Navbar.Toggle aria-controls="responsive-navbar-nav md" />
 
               <Navbar.Collapse className="justify-content-end">
                 {auth ? (
-                  <DropdownButton
+                  <DropdownButton className='toggle'
                     variant=""
                     align="end"
                     title={
@@ -180,21 +180,21 @@ const Main = () => {
                       />
                     }
                   >
-                    <Dropdown.Item as="button" onClick={() => setModalShow(true)}>
+                    <Dropdown.Item as="button" style={{"marginLeft":"60px"}} onClick={() => setModalShow(true)}>
                       Profile
                     </Dropdown.Item>
                     <ProfileModal show={modalShow} onHide={() => setModalShow(false)} />
 
                     <Dropdown.Divider />
 
-                    <Dropdown.Item as="button" onClick={logoutHandler}>
+                    <Dropdown.Item as="button" style={{"marginLeft":"60px"}} onClick={logoutHandler}>
                       Log out
                     </Dropdown.Item>
                   </DropdownButton>
                 ) : (
                   <Nav.Item>
                     <Link to="/Main">
-                      <button className="nav-button">Home</button>
+                      <button className="nav-button mt-3">Home</button>
                     </Link>
                   </Nav.Item>
                 )}

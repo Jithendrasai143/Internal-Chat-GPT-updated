@@ -9,14 +9,14 @@
 }
 
 .send-button {
-  position: absolute;
-  bottom: 20px;
-  right: 60px;
+  max-width: auto;
   padding: 5px 10px;
+  margin-left: 20px;
   background-color: rgb(25, 195, 125);
   color: white;
   border: none;
-  border-radius: 20px;
+  border-radius: 5px;
+  min-height: auto;
   cursor: pointer;
 }
 
@@ -82,13 +82,15 @@
     border-radius: 4px;
     font-size: 1rem;
     padding: 0.75rem;
-    width: 100%;
+    max-width: 100%;
+
   }
   
   .button {
     background: #764ba2;
     color: #fff;
     cursor: pointer;
+    margin-left: 30px;
   }
   
   .App {
@@ -107,7 +109,7 @@
     background-color: #202123;
     border: 1px solid #fff;
     padding: 10px;
-    width: 260px;
+    max-width: 160px;
   }
   
   .side-menu-button {
@@ -132,6 +134,7 @@
     border: 1px solid #fff;
     flex: 1 1;
     position: relative;
+    max-width: auto;
   }
   
   .chat-input-holder {
@@ -195,6 +198,7 @@
     color: #fff;
     cursor: pointer;
     margin-top: 20px;
+    margin-left: 29px;
     padding: 8px;
   }
   
@@ -269,6 +273,10 @@
     font-size: 16px;
     margin-bottom: 30px;
     padding: 10px 20px;
+  }
+  .toggle{
+    margin-left: 30px;
+    
   }
   
   

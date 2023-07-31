@@ -74,20 +74,20 @@ const NavigationBar = () => {
           ) : (
             <Nav.Item>
               <button
-                className="nav-button me-2"
+                className="nav-button me mt-3"
                 onClick={() => navigate("/login")}
               >
                 Log in
               </button>
               <button
-                className="nav-button"
+                className="nav-button me mt-3"
                 onClick={() => navigate("/register")}
               >
                 Register
               </button>
               <Link to="/Main">
               <button 
-                className="nav-button">Home</button>
+                className="nav-button me-2 mt-3">Home</button>
               </Link>
             </Nav.Item>
           )}
