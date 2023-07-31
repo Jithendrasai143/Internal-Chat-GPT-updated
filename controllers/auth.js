@@ -11,10 +11,10 @@ const sendEmail = require("../utils/sendEmail");
 // @access          Public
 const register = async (req, res, next) => {
   try {
-    const { name, email, password, profilePic } = req.body;
+    const { name, email, phone, password, profilePic } = req.body;
     // Check if any of them is undefined
     // console.log(process.env.JWT_EXPIRE);
-    if (!name || !email || !password) {
+    if (!name || !email || !phone || !password) {
       return next(
         new ErrorResponse("Please provide name, email and password", 400)
       );
@@ -35,11 +35,15 @@ const register = async (req, res, next) => {
             name,
             email,
             password,
+            phone,
+            address
           }
         : {
             name,
             email,
             password,
+            phone,
+            address,
             profilePic,
           }
     );
@@ -177,6 +181,7 @@ const sendAuth = (user, statusCode, res) => {
     success: true,
     name: user.name,
     email: user.email,
+    phone : user.phone,
     profilePic: user.profilePic,
     // token: token,
     token: user.getSignedToken(),
