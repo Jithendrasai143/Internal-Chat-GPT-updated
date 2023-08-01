@@ -15,7 +15,8 @@ import {
   PasswordResetPage,
   MainPage,
 } from "./pages";
-import { NavigationBar } from "./components";
+import { NavigationBar,ProfileModal } from "./components";
+import EditAccount from "./components/EditAccount";
 
 const App = () => {
   return (
@@ -25,6 +26,8 @@ const App = () => {
         {/* Private routes (Requires authentication token) */}
         <Route element={<PrivateRoutes />}>
         <Route path="/" element={<HomePage />} />
+        <Route path="/editAccount" element={<EditAccount />}/>
+        <Route exact path="/profile" element={<ProfileModal />} />
         </Route>
 
         {/* Public routes */}
