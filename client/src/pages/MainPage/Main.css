@@ -1,0 +1,282 @@
+/* styles.css */
+/* Main.css */
+.chat-input-container {
+  position: relative;
+}
+
+.text-area {
+  padding-right: 35px; /* Adjust this value based on the button width */
+}
+
+.send-button {
+  max-width: auto;
+  padding: 5px 10px;
+  margin-left: 20px;
+  background-color: rgb(25, 195, 125);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  min-height: auto;
+  cursor: pointer;
+}
+
+.send-button:hover {
+  background-color: rgb(18, 144, 90);
+}
+
+  .container {
+    flex-direction: column;
+  }
+  
+  .buttons {
+    margin-top: 16px;
+  }
+  
+  .buttons button {
+    background-color: #0a8852;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+    height: 40px;
+    margin-right: 8px;
+    padding: 8px 16px;
+  }
+  
+  .buttons button:last-child {
+    margin-left: 10px;
+    margin-right: 0;
+  }
+  
+  /* .container {
+    align-items: center;
+    background: linear-gradient(90deg, #667eea, #764ba2);
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+  } */
+  
+  /* .heading {
+    color: #fff;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    text-align: center;
+  } */
+  
+  /* .form {
+    background: #fff;
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    width: 300px;
+  }
+   */
+  .input {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1rem;
+  }
+  
+  .button,
+  .input {
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    padding: 0.75rem;
+    max-width: 100%;
+
+  }
+  
+  .button {
+    background: #764ba2;
+    color: #fff;
+    cursor: pointer;
+    margin-left: 30px;
+  }
+  
+  .App {
+    background-color: #000;
+    bottom: 0;
+    color: #fff;
+    display: flex;
+    left: 0;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    top: 0;
+  }
+  
+  .sidemenu {
+    background-color: #202123;
+    border: 1px solid #fff;
+    padding: 10px;
+    max-width: 160px;
+  }
+  
+  .side-menu-button {
+    border: 1px solid #fff;
+    border-radius: 5px;
+    padding: 12px;
+    text-align: left;
+    transition: all 0.25s;
+  }
+  
+  .side-menu-button:hover {
+    background-color: hsla(0, 0%, 100%, 0.1);
+  }
+  
+  .side-menu-button span {
+    padding-left: 6px;
+    padding-right: 12px;
+  }
+  
+  .chatbox {
+    background-color: #343541;
+    border: 1px solid #fff;
+    flex: 1 1;
+    position: relative;
+    max-width: auto;
+  }
+  
+  .chat-input-holder {
+    bottom: 0;
+    left: 0;
+    padding: 24px;
+    position: absolute;
+    right: 0;
+  }
+  
+  .text-area {
+    background-color: #40414f;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.25);
+    color: #fff;
+    font-size: 1.25em;
+    outline: none;
+    padding: 12px;
+    width: 90%;
+  }
+  
+  .chat-log {
+    text-align: left;
+  }
+  
+  .chat-message.chat-gpt {
+    background-color: #444654;
+  }
+  
+  .chat-message-center {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 480px;
+    padding: 12px 24px;
+  }
+  
+  .avatar {
+    background: #fff;
+  }
+  
+  .avatar,
+  .avatar.chat-gpt {
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+  }
+  
+  .avatar.chat-gpt {
+    background: #0da37f;
+  }
+  
+  .message {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+  
+  .toggle-button {
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-left: 29px;
+    padding: 8px;
+  }
+  
+  .toggle-button,
+  .toggle-button.open {
+    background-color: #343541;
+  }
+  
+  .account-details {
+    background-color: #202123;
+    color: #fff;
+    margin-bottom: 16px;
+    padding: 16px;
+  }
+  
+  .app {
+    text-align: center;
+  }
+  
+  .header {
+    background-color: #10402b;
+    justify-content: space-between;
+    padding: 20px;
+  }
+  
+  .header,
+  .logo {
+    align-items: center;
+    display: flex;
+  }
+  
+  .logo {
+    color: #d82bb3;
+  }
+  
+  .logo svg {
+    height: 41px;
+    margin-right: 10px;
+    width: 41px;
+  }
+  
+  .logo-name {
+    color: #cd33cd;
+    font-size: 20px;
+  }
+  
+  .menu-bar ul {
+    display: flex;
+    list-style-type: none;
+  }
+  
+  .menu-bar li {
+    margin-right: 10px;
+  }
+  
+  .menu-bar a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .banner-section {
+    background-color: #10402b;
+    color: #d72cbe;
+    padding: 50px;
+  }
+  
+  .try-chatgpt-btn {
+    background-color: #f3119d;
+    border: 1px solid #fff;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    margin-bottom: 30px;
+    padding: 10px 20px;
+  }
+  .toggle{
+    margin-left: 30px;
+    
+  }
+  
+  
